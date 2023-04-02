@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="POo-IS-W7Y">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="kN4-kz-hhz">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="QnS-6H-B51" customClass="SettingsViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SrX-Ed-A3b">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fd2-Nc-fwG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hx4-m1-DVm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fR5-Xd-KQi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="761" y="408"/>
+        </scene>
+        <!--Break View Controller-->
+        <scene sceneID="G45-2l-toM">
+            <objects>
+                <viewController storyboardIdentifier="BreakViewController" id="LbW-p2-GNb" customClass="BreakViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tZS-CE-VBh">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gOq-du-3bv">
+                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mjT-Re-rlT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mjT-Re-rlT" firstAttribute="trailing" secondItem="gOq-du-3bv" secondAttribute="trailing" id="0uF-m9-H9X"/>
+                            <constraint firstItem="gOq-du-3bv" firstAttribute="leading" secondItem="mjT-Re-rlT" secondAttribute="leading" id="JVo-Co-vqx"/>
+                            <constraint firstItem="mjT-Re-rlT" firstAttribute="bottom" secondItem="gOq-du-3bv" secondAttribute="bottom" id="LYo-tb-ss3"/>
+                            <constraint firstItem="gOq-du-3bv" firstAttribute="top" secondItem="mjT-Re-rlT" secondAttribute="top" id="Veh-S4-cEl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="gOq-du-3bv" id="0QL-CI-ohZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ku-6z-FUB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1731" y="673"/>
+        </scene>
+        <!--Information View Controller-->
+        <scene sceneID="0Ef-tW-M1f">
+            <objects>
+                <viewController storyboardIdentifier="InformationViewController" id="T3U-fu-D7u" customClass="InformationViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6XE-KB-K5h">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vvC-Ry-XRJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C59-Uw-ugU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2540.579710144928" y="404.46428571428572"/>
+        </scene>
+        <!--How It Work View Controller-->
+        <scene sceneID="dwn-hR-GPN">
+            <objects>
+                <viewController storyboardIdentifier="HowItWorkViewController" id="sBT-rU-ppA" customClass="HowItWorkViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7w8-27-Ilk">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="b3E-3j-88i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zPg-tm-N3C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3344.6511627906975" y="409.44206008583694"/>
+        </scene>
+        <!--Long Break View Controller-->
+        <scene sceneID="pGR-7Y-h7o">
+            <objects>
+                <viewController storyboardIdentifier="LongBreakViewController" id="czH-UG-Nts" customClass="LongBreakViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A1l-UV-i19">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jKV-4E-BY7">
+                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kj7-vL-fQU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kj7-vL-fQU" firstAttribute="bottom" secondItem="jKV-4E-BY7" secondAttribute="bottom" id="b00-F3-gCQ"/>
+                            <constraint firstItem="Kj7-vL-fQU" firstAttribute="trailing" secondItem="jKV-4E-BY7" secondAttribute="trailing" id="ebg-fL-Qyf"/>
+                            <constraint firstItem="jKV-4E-BY7" firstAttribute="top" secondItem="Kj7-vL-fQU" secondAttribute="top" id="hMs-Pq-7Bf"/>
+                            <constraint firstItem="jKV-4E-BY7" firstAttribute="leading" secondItem="Kj7-vL-fQU" secondAttribute="leading" id="vrf-lf-Ap1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="jKV-4E-BY7" id="MdO-Dv-aFD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tvz-th-pUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1731" y="1386"/>
+        </scene>
+        <!--Focus Time View Controller-->
+        <scene sceneID="eMV-zX-9Al">
+            <objects>
+                <viewController storyboardIdentifier="SelectTimeViewController" id="ApP-e2-hF6" customClass="FocusTimeViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eVw-Pq-x79">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="y2Q-rj-RSE">
+                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="x8X-xA-LMO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x8X-xA-LMO" firstAttribute="bottom" secondItem="y2Q-rj-RSE" secondAttribute="bottom" id="9a2-oy-jsF"/>
+                            <constraint firstItem="y2Q-rj-RSE" firstAttribute="top" secondItem="x8X-xA-LMO" secondAttribute="top" id="Maw-3K-Yjg"/>
+                            <constraint firstItem="x8X-xA-LMO" firstAttribute="trailing" secondItem="y2Q-rj-RSE" secondAttribute="trailing" id="SWv-Wy-qda"/>
+                            <constraint firstItem="y2Q-rj-RSE" firstAttribute="leading" secondItem="x8X-xA-LMO" secondAttribute="leading" id="oU3-qA-JFz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pOo-Z6-0Cg"/>
+                    <connections>
+                        <outlet property="tableView" destination="y2Q-rj-RSE" id="DVW-WB-SSD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sPF-qj-B8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="-32"/>
+        </scene>
+        <!--Таймер-->
+        <scene sceneID="Nb6-O2-xuL">
+            <objects>
+                <viewController storyboardIdentifier="TimerViewController" id="doK-mE-KNr" customClass="TimerViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XLc-dI-W8K">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPo-vp-GNt">
+                                <rect key="frame" x="65" y="426" width="300" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Leh-6d-Ujf"/>
+                                    <constraint firstAttribute="width" constant="300" id="ZLs-uN-m5H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjR-tq-m7o">
+                                <rect key="frame" x="115" y="361" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XYU-Qr-WWc"/>
+                                    <constraint firstAttribute="width" constant="200" id="ZFB-O1-snR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="z73-XY-gM1">
+                                <rect key="frame" x="153" y="656" width="124" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDe-yz-amo">
+                                        <rect key="frame" x="0.0" y="0.0" width="47" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system" title=""/>
+                                        <connections>
+                                            <action selector="restartTimerAction:" destination="doK-mE-KNr" eventType="touchUpInside" id="M9w-zf-f1o"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQy-yf-foM">
+                                        <rect key="frame" x="77" y="0.0" width="47" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="play" catalog="system" title=""/>
+                                        <connections>
+                                            <action selector="toggleTimer:" destination="doK-mE-KNr" eventType="touchUpInside" id="Zjl-sZ-QDT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wS9-l0-1g9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="z73-XY-gM1" firstAttribute="centerX" secondItem="XLc-dI-W8K" secondAttribute="centerX" id="P0z-JW-ED2"/>
+                            <constraint firstItem="qPo-vp-GNt" firstAttribute="centerX" secondItem="XLc-dI-W8K" secondAttribute="centerX" id="Q3m-ee-NhW"/>
+                            <constraint firstItem="z73-XY-gM1" firstAttribute="top" secondItem="qPo-vp-GNt" secondAttribute="bottom" constant="150" id="VQz-4X-O1J"/>
+                            <constraint firstItem="qPo-vp-GNt" firstAttribute="top" secondItem="gjR-tq-m7o" secondAttribute="bottom" constant="15" id="W4d-TE-xTc"/>
+                            <constraint firstItem="gjR-tq-m7o" firstAttribute="centerX" secondItem="XLc-dI-W8K" secondAttribute="centerX" id="Z9N-0w-UJU"/>
+                            <constraint firstItem="qPo-vp-GNt" firstAttribute="centerY" secondItem="XLc-dI-W8K" secondAttribute="centerY" id="g2s-gx-0va"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Таймер" id="UWj-GO-ogg">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" style="plain" id="mHe-zc-0xX">
+                            <connections>
+                                <action selector="perehodAction:" destination="doK-mE-KNr" id="K8q-eo-jMq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playPauseButton" destination="kQy-yf-foM" id="9TO-PA-BG4"/>
+                        <outlet property="restartTimerButton" destination="WDe-yz-amo" id="iPw-9D-f8U"/>
+                        <outlet property="settingsBarButtonItem" destination="mHe-zc-0xX" id="ZSD-bG-5q3"/>
+                        <outlet property="stayFocusedLabel" destination="gjR-tq-m7o" id="dDU-9v-RPs"/>
+                        <outlet property="timerLabel" destination="qPo-vp-GNt" id="XAy-28-3X1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hfv-gp-rbY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223.07692307692307" y="407.34597156398104"/>
+        </scene>
+        <!--Timer-->
+        <scene sceneID="Jie-1B-NNR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="POo-IS-W7Y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timer" image="timer" catalog="system" id="afI-gh-7Qk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z49-4z-hP7">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="doK-mE-KNr" kind="relationship" relationship="rootViewController" id="qq9-B1-6Az"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UT9-WL-uin" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1048" y="408"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
+        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="play" catalog="system" width="117" height="128"/>
+        <image name="timer" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
