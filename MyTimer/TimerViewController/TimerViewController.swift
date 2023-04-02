@@ -10,7 +10,7 @@ import UserNotifications
 
 class TimerViewController: UIViewController {
     
-    
+    //MARK: -IBOutlets
     @IBOutlet weak var stayFocusedLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
@@ -67,8 +67,6 @@ class TimerViewController: UIViewController {
         
         
     }
-    
-    
     
     func dataUserDefaults() {
         guard let value = defaults.string(forKey: "selectedValue") else { return }
@@ -172,9 +170,6 @@ class TimerViewController: UIViewController {
         center.add(request)
     }
     
-    
-    
-    
     @IBAction func toggleTimer(_ sender: Any) {
         if !isTimerStarted {
                         drawForeLayer()
@@ -206,10 +201,6 @@ class TimerViewController: UIViewController {
         
         
     }
-    
-    
-    
-    
     
     //MARK: - Animation
     
