@@ -211,14 +211,20 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 
             case IndexPath(row: 0, section: 1):
                 let selectTimeViewController = storyboard?.instantiateViewController(withIdentifier: "SelectTimeViewController") as! FocusTimeViewController
+                selectTimeViewController.value = "\(indexPath.row + 10)"
+                selectTimeViewController.delegate = navigationController?.viewControllers.first as? TimerViewController
                 navigationController?.pushViewController(selectTimeViewController, animated: true)
                 
             case IndexPath(row: 1, section: 1):
                 let breakViewController = storyboard?.instantiateViewController(withIdentifier: "BreakViewController") as! BreakViewController
+                breakViewController.value = "\(indexPath.row + 10)"
+                breakViewController.delegate = navigationController?.viewControllers.first as? TimerViewController
                 navigationController?.pushViewController(breakViewController, animated: true)
                 
             case IndexPath(row: 2, section: 1):
                 let longBreakViewController = storyboard?.instantiateViewController(withIdentifier: "LongBreakViewController") as! LongBreakViewController
+                longBreakViewController.value = "\(indexPath.row + 10)"
+                longBreakViewController.delegate = navigationController?.viewControllers.first as? TimerViewController
                 navigationController?.pushViewController(longBreakViewController, animated: true)
                 
             case IndexPath(row: 0, section: 0):

@@ -15,14 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
         // Получаем текущее значение сохраненной темы
         let savedTheme = UserDefaults.standard.bool(forKey: "isDarkTheme")
         
         // Если темная тема сохранена, включаем ее
         if savedTheme, #available(iOS 13.0, *) {
-                    window?.overrideUserInterfaceStyle = .dark
-                }
+            window?.overrideUserInterfaceStyle = .dark
+        }
         return true
     }
     

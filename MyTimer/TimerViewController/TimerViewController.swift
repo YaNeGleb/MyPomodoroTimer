@@ -12,6 +12,7 @@ enum TimerMode {
    case work, breakTime, longBreak
 }
 
+
 class TimerViewController: UIViewController {
     
     //MARK: -IBOutlets
@@ -21,7 +22,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var restartTimerButton: UIButton!
     @IBOutlet weak var settingsBarButtonItem: UIBarButtonItem!
     
-    // MARK: - Constants
+    // MARK: - Properties
     private var timer = Timer()
     private let defaults = UserDefaults.standard
     
@@ -144,16 +145,6 @@ class TimerViewController: UIViewController {
         return String(format: "%02i:%02i", minutes, seconds)
     }
     
-    func scheduleTest(title: String, body: String) {
-        let center = UNUserNotificationCenter.current()
-        let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = body
-        content.sound = .default
-        let request = UNNotificationRequest(identifier: "timerModeChange", content: content, trigger: nil)
-        center.add(request)
-    }
-    
     @IBAction func toggleTimer(_ sender: Any) {
         if !isTimerStarted {
                         drawForeLayer()
@@ -182,9 +173,17 @@ class TimerViewController: UIViewController {
         isTimerStarted = false
         timerLabel.text = staticTimeForTimer
         updateLabel(value: staticTimeForTimer)
-        
-        
-        
+    }
+    
+    //MARK: - Notification
+    func scheduleTest(title: String, body: String) {
+        let center = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        let request = UNNotificationRequest(identifier: "timerModeChange", content: content, trigger: nil)
+        center.add(request)
     }
     
     //MARK: - Animation
