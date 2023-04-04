@@ -164,7 +164,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjR-tq-m7o">
-                                <rect key="frame" x="115" y="361" width="200" height="50"/>
+                                <rect key="frame" x="115" y="366" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XYU-Qr-WWc"/>
                                     <constraint firstAttribute="width" constant="200" id="ZFB-O1-snR"/>
@@ -201,7 +201,7 @@
                             <constraint firstItem="z73-XY-gM1" firstAttribute="centerX" secondItem="XLc-dI-W8K" secondAttribute="centerX" id="P0z-JW-ED2"/>
                             <constraint firstItem="qPo-vp-GNt" firstAttribute="centerX" secondItem="XLc-dI-W8K" secondAttribute="centerX" id="Q3m-ee-NhW"/>
                             <constraint firstItem="z73-XY-gM1" firstAttribute="top" secondItem="qPo-vp-GNt" secondAttribute="bottom" constant="150" id="VQz-4X-O1J"/>
-                            <constraint firstItem="qPo-vp-GNt" firstAttribute="top" secondItem="gjR-tq-m7o" secondAttribute="bottom" constant="15" id="W4d-TE-xTc"/>
+                            <constraint firstItem="qPo-vp-GNt" firstAttribute="top" secondItem="gjR-tq-m7o" secondAttribute="bottom" constant="10" id="W4d-TE-xTc"/>
                             <constraint firstItem="gjR-tq-m7o" firstAttribute="centerX" secondItem="XLc-dI-W8K" secondAttribute="centerX" id="Z9N-0w-UJU"/>
                             <constraint firstItem="qPo-vp-GNt" firstAttribute="centerY" secondItem="XLc-dI-W8K" secondAttribute="centerY" id="g2s-gx-0va"/>
                         </constraints>

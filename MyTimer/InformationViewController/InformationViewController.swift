@@ -49,13 +49,6 @@ class InformationViewController: UIViewController {
         scrollView.contentSize = CGSize(width: scrollView.frame.width, height: infoLabel.frame.maxY + 10)
 
 
-        
-
-
-
-        
-            
-        
         if let url = URL(string: "https://picsum.photos/id/1003/400/300") {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let data = data, let image = UIImage(data: data) {

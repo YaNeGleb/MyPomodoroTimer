@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TimerViewControllerDelegate {
+    func setStaticTimeForTimer(value: String)
+}
+
 class FocusTimeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     

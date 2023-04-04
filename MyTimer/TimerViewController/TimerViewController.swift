@@ -8,6 +8,10 @@
 import UIKit
 import UserNotifications
 
+enum TimerMode {
+   case work, breakTime, longBreak
+}
+
 class TimerViewController: UIViewController {
     
     //MARK: -IBOutlets
@@ -17,7 +21,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var restartTimerButton: UIButton!
     @IBOutlet weak var settingsBarButtonItem: UIBarButtonItem!
     
-    
+    // MARK: - Constants
     private var timer = Timer()
     private let defaults = UserDefaults.standard
     
@@ -26,27 +30,17 @@ class TimerViewController: UIViewController {
     private let animation = CABasicAnimation(keyPath: "strokeStart")
     private var isAnimationStarted = false
     
-    
-    
     private var isTimeToBreak = true
     private var pomodoroCount = 0
     private var secondsRemaining = 1500
     private var timerMode: TimerMode = .work
-    
-    
     
     private var staticTimeForTimer = "25:00"
     private var staticTimeBreakForTimer = "5"
     private var staticTimeLongBreak = "15:00"
     private var isTimerStarted = false
     
-    
-    
-    private enum TimerMode {
-        case work, breakTime, longBreak
-    }
-    
-    
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
                 drawBackLayer()
@@ -55,19 +49,9 @@ class TimerViewController: UIViewController {
         dataUserDefaults()
         stayFocusedLabel.text = "Stay focused"
         stayFocusedLabel.textColor = .systemRed
-        
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                print("All set!")
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-        
-        
     }
     
+    // MARK: - UserDefaults
     func dataUserDefaults() {
         guard let value = defaults.string(forKey: "selectedValue") else { return }
         setStaticTimeForTimer(value: value)
@@ -107,7 +91,7 @@ class TimerViewController: UIViewController {
         secondsRemaining = totalSeconds
     }
     
-    
+    // MARK: - Timer
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
@@ -184,6 +168,7 @@ class TimerViewController: UIViewController {
             playPauseButton.setImage(UIImage(systemName: "play"), for: .normal)
         }
     }
+    
     @IBAction func perehodAction(_ sender: Any) {
         let settingsViewController = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         navigationController?.pushViewController(settingsViewController, animated: true)
@@ -203,7 +188,6 @@ class TimerViewController: UIViewController {
     }
     
     //MARK: - Animation
-    
     func drawBackLayer() {
         backProgressLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX, y: view.frame.midY), radius: 150, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).cgPath
         backProgressLayer.lineWidth = 20
@@ -229,9 +213,7 @@ class TimerViewController: UIViewController {
             resumeAnimation()
         }
     }
-    
-    
-    
+
     func startAnimation() {
         resetAnimation()
         animation.keyPath = "strokeEnd"

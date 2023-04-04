@@ -39,6 +39,7 @@ struct SettingsOption {
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomCellDelegate {
     
+    // MARK: - Properties
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
@@ -50,8 +51,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     let switch1Key = "Switch1"
     let switch2Key = "Switch2"
     let userdefaults = UserDefaults.standard
+    let savedTheme = UserDefaults.standard.bool(forKey: "isDarkTheme")
     
-    
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Настройки"
@@ -61,48 +63,60 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.frame = view.bounds
         view.addSubview(tableView)
         
+        
+        if savedTheme {
+            overrideUserInterfaceStyle = .dark
+               }
     }
     
+    //MARK: - Configure switch
     func switchValueChanged(isOn: Bool, indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            if isOn {
-                userdefaults.set(isOn, forKey: "isDarkModeEnabled")
+              if isOn {
+//                overrideUserInterfaceStyle = .dark
+                userdefaults.set(true, forKey: "isDarkTheme")
                 userdefaults.set(isOn, forKey: switch1Key)
-                updateTheme()
-            } else {
-                userdefaults.removeObject(forKey: switch1Key)
-                userdefaults.removeObject(forKey: "isDarkModeEnabled")
-                updateTheme()
+                  updateTheme()
 
-            }
-        case 1:
-            if isOn {
-                userdefaults.set(isOn, forKey: switch2Key)
-            } else {
-              
-                userdefaults.removeObject(forKey: switch2Key)
-            }
-        default:
-            break
-        }
-    }
+              } else {
+                  userdefaults.removeObject(forKey: switch1Key)
+//                  overrideUserInterfaceStyle = .light
+                  userdefaults.set(false, forKey: "isDarkTheme")
+                  updateTheme()
+
+              }
+          case 1:
+              if isOn {
+                  userdefaults.set(isOn, forKey: switch2Key)
+              } else {
+                  userdefaults.removeObject(forKey: switch2Key)
+              }
+          default:
+              break
+          }
+      }
     
+    //MARK: - Update theme
     func updateTheme() {
-        let isDarkModeEnabled = userdefaults.bool(forKey: "isDarkModeEnabled")
+        let isDarkModeEnabled = userdefaults.bool(forKey: "isDarkTheme")
         if isDarkModeEnabled {
             if #available(iOS 13.0, *) {
-                guard let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else { return }
-                let windows = windowScene.windows
-                windows.forEach { window in
-                    window.overrideUserInterfaceStyle = isDarkModeEnabled ? .dark : .light
+                UIApplication.shared.windows.forEach { window in
+                    window.overrideUserInterfaceStyle = .dark
                 }
-            }        } else {
-            overrideUserInterfaceStyle = .light
+            }
+        } else {
+            if #available(iOS 13.0, *) {
+                UIApplication.shared.windows.forEach { window in
+                    window.overrideUserInterfaceStyle = .light
+                    navigationController?.popViewController(animated: true)
+                }
+            }
         }
     }
     
-    
+    //MARK: - Configure custom cell
     func configure() {
         models = [
             Section(title: "Информация", options: [
@@ -197,8 +211,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 
             case IndexPath(row: 0, section: 1):
                 let selectTimeViewController = storyboard?.instantiateViewController(withIdentifier: "SelectTimeViewController") as! FocusTimeViewController
-//                selectTimeViewController.value = "\(indexPath.row + 10)"
-//                selectTimeViewController.delegate = navigationController?.viewControllers.first as? TimerViewController
                 navigationController?.pushViewController(selectTimeViewController, animated: true)
                 
             case IndexPath(row: 1, section: 1):
