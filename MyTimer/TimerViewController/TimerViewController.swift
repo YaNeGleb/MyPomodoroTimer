@@ -41,15 +41,18 @@ class TimerViewController: UIViewController {
     private var staticTimeLongBreak = "15:00"
     private var isTimerStarted = false
     
+    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-                drawBackLayer()
+        drawBackLayer()
         updateLabel(value: staticTimeForTimer)
         setBreakTime(value: staticTimeBreakForTimer)
         dataUserDefaults()
         stayFocusedLabel.text = "Stay focused"
         stayFocusedLabel.textColor = .systemRed
+        UNUserNotificationCenter.current().delegate = self
+        
     }
     
     // MARK: - UserDefaults
@@ -100,6 +103,7 @@ class TimerViewController: UIViewController {
     @objc func updateTime() {
         guard secondsRemaining != 1 else {
             timer.invalidate()
+            drawBackLayer()
             playPauseButton.setImage(UIImage(systemName: "play"), for: .normal)
             switch timerMode {
             case .work:
@@ -147,15 +151,15 @@ class TimerViewController: UIViewController {
     
     @IBAction func toggleTimer(_ sender: Any) {
         if !isTimerStarted {
-                        drawForeLayer()
-                        startResumeAnimation()
+            drawForeLayer()
+            startResumeAnimation()
             startTimer()
             isTimerStarted = true
             playPauseButton.setImage(UIImage(systemName: "pause"), for: .normal)
         } else {
             timer.invalidate()
             isTimerStarted = false
-                        pauseAnimation()
+            pauseAnimation()
             playPauseButton.setImage(UIImage(systemName: "play"), for: .normal)
         }
     }
@@ -167,7 +171,7 @@ class TimerViewController: UIViewController {
     
     @IBAction func restartTimerAction(_ sender: Any) {
         timer.invalidate()
-                stopAnimation()
+        stopAnimation()
         pomodoroCount = 0
         playPauseButton.setImage(UIImage(systemName: "play"), for: .normal)
         isTimerStarted = false
@@ -182,8 +186,14 @@ class TimerViewController: UIViewController {
         content.title = title
         content.body = body
         content.sound = .default
-        let request = UNNotificationRequest(identifier: "timerModeChange", content: content, trigger: nil)
-        center.add(request)
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "timerModeChange", content: content, trigger: trigger)
+        center.add(request) { error in
+            if let error = error {
+                print("Error adding notification request: \(error.localizedDescription)")
+            }
+        }
     }
     
     //MARK: - Animation
@@ -212,7 +222,7 @@ class TimerViewController: UIViewController {
             resumeAnimation()
         }
     }
-
+    
     func startAnimation() {
         resetAnimation()
         animation.keyPath = "strokeEnd"
@@ -255,6 +265,13 @@ class TimerViewController: UIViewController {
         foreProgressLayer.removeAllAnimations()
         isAnimationStarted = false
     }
+}
+
+    //MARK: - Extensions
+extension TimerViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner, .sound, .badge])
+       }
 }
     
 extension Int {

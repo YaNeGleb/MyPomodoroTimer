@@ -15,6 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if let error = error {
+                // обработка ошибки
+                print("Error requesting authorization for notifications: \(error.localizedDescription)")
+            }
+            // действия, если пользователь разрешил или не разрешил отправку уведомлений
+        }
         // Получаем текущее значение сохраненной темы
         let savedTheme = UserDefaults.standard.bool(forKey: "isDarkTheme")
         

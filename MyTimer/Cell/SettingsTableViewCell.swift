@@ -75,14 +75,12 @@ class SettingsTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        // reset the UI elements to their initial state
         iconImageView.image = nil
         label.text = nil
         timeLabel.text = nil
         iconContainer.backgroundColor = nil
     }
 
-    
     public func configure(with model: SettingsOption) {
         label.text = model.title
         iconImageView.image = model.icon
