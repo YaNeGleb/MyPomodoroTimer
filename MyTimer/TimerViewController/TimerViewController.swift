@@ -52,7 +52,9 @@ class TimerViewController: UIViewController {
         stayFocusedLabel.text = "Stay focused"
         stayFocusedLabel.textColor = .systemRed
         UNUserNotificationCenter.current().delegate = self
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self,selector:#selector(applicationWillEnterForeground),name:UIApplication.willEnterForegroundNotification,object:nil)
+
     }
     
     // MARK: - UserDefaults
@@ -65,6 +67,19 @@ class TimerViewController: UIViewController {
         
         guard let longBreakValue = defaults.string(forKey: "longBreakSelectedValue") else { return }
         setLongBreakTime(value: longBreakValue)
+    }
+    
+    @objc func applicationDidEnterBackground() {
+        // Остановить анимацию и таймер, когда приложение уходит в фоновый режим
+        pauseAnimation()
+
+    }
+
+    @objc func applicationWillEnterForeground() {
+        // Запустить анимацию, когда приложение возвращается из фонового режима
+        if isTimerStarted == true {
+            startResumeAnimation()
+        }
     }
     
     func setLongBreakTime(value: String) {
@@ -103,7 +118,7 @@ class TimerViewController: UIViewController {
     @objc func updateTime() {
         guard secondsRemaining != 1 else {
             timer.invalidate()
-            drawBackLayer()
+            stopAnimation()
             playPauseButton.setImage(UIImage(systemName: "play"), for: .normal)
             switch timerMode {
             case .work:
@@ -124,7 +139,7 @@ class TimerViewController: UIViewController {
                 
             case .breakTime:
                 stayFocusedLabel.text = "Stay focused"
-                scheduleTest(title: "Timer", body: "Пора отдохнуть!")
+                scheduleTest(title: "Timer", body: "Пора поработать!")
                 stayFocusedLabel.textColor = .red
                 updateLabel(value: staticTimeForTimer)
                 timerMode = .work
@@ -231,7 +246,8 @@ class TimerViewController: UIViewController {
         animation.duration = CFTimeInterval(secondsRemaining)
         animation.fillMode = .forwards
         animation.isRemovedOnCompletion = false
-        foreProgressLayer.add(animation, forKey: "strokeEndAnimation")
+        foreProgressLayer.add(animation, forKey: "strokeStart")
+        isAnimationStarted = true
     }
     
     func resetAnimation() {
