@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="POo-IS-W7Y">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="POo-IS-W7Y">
+    <device id="retina6_72" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ku-6z-FUB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731" y="673"/>
+            <point key="canvasLocation" x="2628.8372093023254" y="672.74678111587991"/>
         </scene>
         <!--Information View Controller-->
         <scene sceneID="0Ef-tW-M1f">
@@ -112,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvz-th-pUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731" y="1386"/>
+            <point key="canvasLocation" x="2628.8372093023254" y="1385.4077253218884"/>
         </scene>
         <!--Focus Time View Controller-->
         <scene sceneID="eMV-zX-9Al">
@@ -194,6 +195,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Cq-Xk-LOb">
+                                <rect key="frame" x="140" y="779" width="151" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="exit"/>
+                                <connections>
+                                    <action selector="logOutButton:" destination="doK-mE-KNr" eventType="touchUpInside" id="3Nm-t9-J0V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wS9-l0-1g9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -223,7 +233,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfv-gp-rbY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-223.07692307692307" y="407.34597156398104"/>
+            <point key="canvasLocation" x="-223.25581395348837" y="406.86695278969961"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="bN9-N8-DGI">
+            <objects>
+                <viewController storyboardIdentifier="AuthViewController" id="o5y-Jd-EgS" customClass="AuthViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="leh-eN-1DI">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="NPf-3n-vTK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="d6h-uA-yWT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rtx-Ax-hSX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3505.1162790697672" y="456.43776824034336"/>
+        </scene>
+        <!--Login Controller-->
+        <scene sceneID="TiC-xE-4C9">
+            <objects>
+                <viewController storyboardIdentifier="LoginController" id="xji-Pk-Hq1" customClass="LoginController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8VF-qH-8RU">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BOb-EQ-S8I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sUM-Ap-svo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3KH-GB-Ihj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2778.1395348837209" y="455.79399141630904"/>
         </scene>
         <!--Timer-->
         <scene sceneID="Jie-1B-NNR">
@@ -231,6 +273,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="POo-IS-W7Y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Timer" image="timer" catalog="system" id="afI-gh-7Qk"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="tJt-Gn-32s"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z49-4z-hP7">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -242,7 +285,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UT9-WL-uin" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1048" y="408"/>
+            <point key="canvasLocation" x="-1506" y="94"/>
         </scene>
     </scenes>
     <resources>

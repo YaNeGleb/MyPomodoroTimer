@@ -7,16 +7,12 @@
 
 import UIKit
 
-protocol TimerViewControllerDelegate {
-    func setStaticTimeForTimer(value: String)
-}
-
 class FocusTimeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var value: String?
     // Значения времени для таблицы
-    var values = ["1 минута", "2 минуты", "15 минут", "20 минут", "25 минут", "30 минут", "45 минут", "50 минут", "60 минут"]
+    var values = ["1 минута", "20 минут", "25 минут", "30 минут", "45 минут", "50 минут", "60 минут"]
     // Делегат таймера
     var delegate: TimerViewController?
 

@@ -1,5 +1,5 @@
 //
-//  BreakViewController.swift
+//  LongBreakViewController.swift
 //  MyTimer
 //
 //  Created by Gleb Zabroda on 27.03.2023.
@@ -7,48 +7,48 @@
 
 import UIKit
 
-class BreakViewController: UIViewController {
+class LongBreakViewController: UIViewController {
     
-    // Связь с интерфейсом
+    // MARK: - Properties
+    
     @IBOutlet weak var tableView: UITableView!
     
-    // Значение выбранного времени перерыва
     var value: String?
-    
-    // Доступные варианты времени для перерыва
-    var values = ["1 минутa","5 минут", "10 минут"]
-    
-    // Связь с контроллером таймера
+    var values = ["20 минут", "30 минут", "40 минут", "50 минут"]
     var delegate: TimerViewController?
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Устанавливаем заголовок для экрана
-        title = "Break"
-        
-        // Настраиваем таблицу
+        // Set up table view
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
+        
+        // Set view title
+        title = "Long Break"
     }
 }
 
-extension BreakViewController: UITableViewDelegate, UITableViewDataSource {
-        
-    // Количество ячеек
+// MARK: - Table view delegate and data source
+
+extension LongBreakViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    // Number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        values.count
+        return values.count
     }
     
-    // Конфигурация ячеек
+    // Configure each cell in the table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = values[indexPath.row]
         
-        // Устанавливаем галочку для выбранного элемента
-        if indexPath.row == UserDefaults.standard.integer(forKey: "breakMark") {
+        // Set checkmark accessory type if this cell was previously selected
+        if indexPath.row == UserDefaults.standard.integer(forKey: "longBreakMark") {
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none
@@ -56,37 +56,40 @@ extension BreakViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    // Обработка нажатия на ячейку
+    // Handle cell selection
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // Получаем выбранную ячейку
+        // Get the selected cell
         let selectedCell = tableView.cellForRow(at: indexPath)
         
-        // Получаем данные из ячейки
+        // Get the selected value
         let selectedValue = values[indexPath.row]
         let components = selectedValue.split(separator: " ")
         let result = String(components[0])
         
-        // Устанавливаем выбранное значение времени для перерыва
+        // Call delegate method to update long break time
         if let delegate = delegate {
-            delegate.setBreakTime(value: result)
+            delegate.setLongBreakTime(value: result)
         }
+        
+        // Pop back to previous view controller
         navigationController?.popViewController(animated: true)
-
-        // Устанавливаем галочку для выбранной ячейки
+        
+        // Set checkmark accessory type for selected cell
         selectedCell?.accessoryType = .checkmark
-
-        // Сохраняем значение в UserDefaults
-        UserDefaults.standard.set(indexPath.row, forKey: "breakMark")
-        UserDefaults.standard.set(result, forKey: "breakSelectedValue")
-
-        // Убираем галочку у остальных ячеек
+        
+        // Save the selected value in user defaults
+        UserDefaults.standard.set(indexPath.row, forKey: "longBreakMark")
+        UserDefaults.standard.set(result, forKey: "longBreakSelectedValue")
+        
+        // Remove checkmark accessory type from all other cells
         for cell in tableView.visibleCells {
             if cell != selectedCell {
                 cell.accessoryType = .none
             }
         }
+        
+        // Pop back to root view controller
         navigationController?.popToRootViewController(animated: true)
     }
 }
-

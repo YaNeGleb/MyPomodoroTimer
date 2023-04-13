@@ -9,7 +9,21 @@
 /* Begin PBXBuildFile section */
 		CC02EAE529D1E5080047EDFC /* LongBreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC02EAE429D1E5080047EDFC /* LongBreakViewController.swift */; };
 		CC110B9529D47CFD0082306D /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC110B9429D47CFD0082306D /* InformationViewController.swift */; };
+		CC1A70AB29E3FBE300DBCEF3 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A70AA29E3FBE300DBCEF3 /* Validator.swift */; };
+		CC1A70AF29E40D0200DBCEF3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A70AE29E40D0200DBCEF3 /* LoginController.swift */; };
 		CC43B6C329D19E9600029D7A /* BreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC43B6C229D19E9600029D7A /* BreakViewController.swift */; };
+		CC511CF529E8651F007A4908 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC511CF429E8651F007A4908 /* NavigationManager.swift */; };
+		CC7E367929E0581F001E17E9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7E367829E0581F001E17E9 /* FirebaseAnalytics */; };
+		CC7E367B29E0581F001E17E9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CC7E367A29E0581F001E17E9 /* FirebaseAuth */; };
+		CC7E367D29E0581F001E17E9 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CC7E367C29E0581F001E17E9 /* FirebaseDatabase */; };
+		CC7E367F29E0581F001E17E9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CC7E367E29E0581F001E17E9 /* FirebaseFirestore */; };
+		CCA889A729E2B75000279B39 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA889A629E2B75000279B39 /* AuthService.swift */; };
+		CCA889A929E2B81F00279B39 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA889A829E2B81F00279B39 /* RegisterUserRequest.swift */; };
+		CCA889AB29E2C28E00279B39 /* LoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA889AA29E2C28D00279B39 /* LoginUserRequest.swift */; };
+		CCA889AD29E2D9DA00279B39 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA889AC29E2D9DA00279B39 /* AlertManager.swift */; };
+		CCA889B129E2E36400279B39 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA889B029E2E36300279B39 /* CustomTextField.swift */; };
+		CCA889B329E2E37800279B39 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA889B229E2E37800279B39 /* CustomButton.swift */; };
+		CCA889B529E2E38F00279B39 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA889B429E2E38F00279B39 /* AuthHeaderView.swift */; };
 		CCAD832229D5D2F900D43F9C /* HowItWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD832129D5D2F900D43F9C /* HowItWorkViewController.swift */; };
 		CCAF807429CDA60100BEEC92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF807329CDA60100BEEC92 /* AppDelegate.swift */; };
 		CCAF807629CDA60100BEEC92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF807529CDA60100BEEC92 /* SceneDelegate.swift */; };
@@ -21,12 +35,24 @@
 		CCAF808A29CDA6CC00BEEC92 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF808929CDA6CC00BEEC92 /* SettingsTableViewCell.swift */; };
 		CCAF808C29CDA72100BEEC92 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF808B29CDA72100BEEC92 /* SwitchTableViewCell.swift */; };
 		CCAF808E29CDA76700BEEC92 /* FocusTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF808D29CDA76700BEEC92 /* FocusTimeViewController.swift */; };
+		CCD78FC229E01A2200247CDC /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD78FC129E01A2200247CDC /* AuthViewController.swift */; };
+		CCD78FC429E023D100247CDC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCD78FC329E023D000247CDC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC02EAE429D1E5080047EDFC /* LongBreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBreakViewController.swift; sourceTree = "<group>"; };
 		CC110B9429D47CFD0082306D /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		CC1A70AA29E3FBE300DBCEF3 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		CC1A70AE29E40D0200DBCEF3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		CC43B6C229D19E9600029D7A /* BreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakViewController.swift; sourceTree = "<group>"; };
+		CC511CF429E8651F007A4908 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		CCA889A629E2B75000279B39 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CCA889A829E2B81F00279B39 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
+		CCA889AA29E2C28D00279B39 /* LoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserRequest.swift; sourceTree = "<group>"; };
+		CCA889AC29E2D9DA00279B39 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		CCA889B029E2E36300279B39 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		CCA889B229E2E37800279B39 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		CCA889B429E2E38F00279B39 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		CCAD832129D5D2F900D43F9C /* HowItWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorkViewController.swift; sourceTree = "<group>"; };
 		CCAF807029CDA60100BEEC92 /* MyTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCAF807329CDA60100BEEC92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +66,8 @@
 		CCAF808929CDA6CC00BEEC92 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		CCAF808B29CDA72100BEEC92 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		CCAF808D29CDA76700BEEC92 /* FocusTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimeViewController.swift; sourceTree = "<group>"; };
+		CCD78FC129E01A2200247CDC /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		CCD78FC329E023D000247CDC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +75,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7E367D29E0581F001E17E9 /* FirebaseDatabase in Frameworks */,
+				CC7E367F29E0581F001E17E9 /* FirebaseFirestore in Frameworks */,
+				CC7E367929E0581F001E17E9 /* FirebaseAnalytics in Frameworks */,
+				CC7E367B29E0581F001E17E9 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +91,70 @@
 				CC110B9429D47CFD0082306D /* InformationViewController.swift */,
 			);
 			path = InformationViewController;
+			sourceTree = "<group>";
+		};
+		CC511CED29E858BB007A4908 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CCA889A829E2B81F00279B39 /* RegisterUserRequest.swift */,
+				CCA889AA29E2C28D00279B39 /* LoginUserRequest.swift */,
+				CCA889B429E2E38F00279B39 /* AuthHeaderView.swift */,
+				CCA889B229E2E37800279B39 /* CustomButton.swift */,
+				CCA889B029E2E36300279B39 /* CustomTextField.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CC511CEE29E85906007A4908 /* AuthViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD78FC129E01A2200247CDC /* AuthViewController.swift */,
+			);
+			path = AuthViewController;
+			sourceTree = "<group>";
+		};
+		CC511CEF29E8591D007A4908 /* LogInViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC1A70AE29E40D0200DBCEF3 /* LoginController.swift */,
+			);
+			path = LogInViewController;
+			sourceTree = "<group>";
+		};
+		CC511CF129E85A74007A4908 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CC511CEF29E8591D007A4908 /* LogInViewController */,
+				CC511CEE29E85906007A4908 /* AuthViewController */,
+				CCCAE33029D2F2EC00553268 /* TimerViewController */,
+				CCCAE33129D2F2FA00553268 /* SettingsViewController */,
+				CCCAE33229D2F31000553268 /* FocusTimeViewController */,
+				CCCAE33329D2F32200553268 /* BreakTineViewController */,
+				CCCAE33429D2F32F00553268 /* LongBreakTimeViewController */,
+				CC110B9629D47D140082306D /* InformationViewController */,
+				CCAD832329D5D31500D43F9C /* HowItWorkViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CC511CF229E85AD2007A4908 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				CC1A70AA29E3FBE300DBCEF3 /* Validator.swift */,
+				CCA889AC29E2D9DA00279B39 /* AlertManager.swift */,
+				CCA889A629E2B75000279B39 /* AuthService.swift */,
+				CC511CF429E8651F007A4908 /* NavigationManager.swift */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		CC511CF329E85B24007A4908 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CCAF807329CDA60100BEEC92 /* AppDelegate.swift */,
+				CCAF807529CDA60100BEEC92 /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		CCAD832329D5D31500D43F9C /* HowItWorkViewController */ = {
@@ -88,20 +184,16 @@
 		CCAF807229CDA60100BEEC92 /* MyTimer */ = {
 			isa = PBXGroup;
 			children = (
-				CCAF807329CDA60100BEEC92 /* AppDelegate.swift */,
-				CCAF807529CDA60100BEEC92 /* SceneDelegate.swift */,
-				CCCAE33029D2F2EC00553268 /* TimerViewController */,
-				CCCAE33129D2F2FA00553268 /* SettingsViewController */,
-				CCCAE33229D2F31000553268 /* FocusTimeViewController */,
-				CCCAE33329D2F32200553268 /* BreakTineViewController */,
-				CCCAE33429D2F32F00553268 /* LongBreakTimeViewController */,
+				CC511CF329E85B24007A4908 /* Application */,
+				CC511CF129E85A74007A4908 /* Controllers */,
+				CC511CED29E858BB007A4908 /* Models */,
 				CCCAE32F29D2F2D900553268 /* Cell */,
-				CC110B9629D47D140082306D /* InformationViewController */,
-				CCAD832329D5D31500D43F9C /* HowItWorkViewController */,
+				CC511CF229E85AD2007A4908 /* Supporting */,
 				CCAF807929CDA60100BEEC92 /* Main.storyboard */,
-				CCAF807C29CDA60100BEEC92 /* Assets.xcassets */,
 				CCAF807E29CDA60100BEEC92 /* LaunchScreen.storyboard */,
+				CCAF807C29CDA60100BEEC92 /* Assets.xcassets */,
 				CCAF808129CDA60100BEEC92 /* Info.plist */,
+				CCD78FC329E023D000247CDC /* GoogleService-Info.plist */,
 			);
 			path = MyTimer;
 			sourceTree = "<group>";
@@ -171,6 +263,12 @@
 			dependencies = (
 			);
 			name = MyTimer;
+			packageProductDependencies = (
+				CC7E367829E0581F001E17E9 /* FirebaseAnalytics */,
+				CC7E367A29E0581F001E17E9 /* FirebaseAuth */,
+				CC7E367C29E0581F001E17E9 /* FirebaseDatabase */,
+				CC7E367E29E0581F001E17E9 /* FirebaseFirestore */,
+			);
 			productName = MyTimer;
 			productReference = CCAF807029CDA60100BEEC92 /* MyTimer.app */;
 			productType = "com.apple.product-type.application";
@@ -199,6 +297,9 @@
 				Base,
 			);
 			mainGroup = CCAF806729CDA60100BEEC92;
+			packageReferences = (
+				CC7E367729E0581F001E17E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CCAF807129CDA60100BEEC92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -214,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCAF808029CDA60100BEEC92 /* LaunchScreen.storyboard in Resources */,
+				CCD78FC429E023D100247CDC /* GoogleService-Info.plist in Resources */,
 				CCAF807D29CDA60100BEEC92 /* Assets.xcassets in Resources */,
 				CCAF807B29CDA60100BEEC92 /* Main.storyboard in Resources */,
 			);
@@ -226,17 +328,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA889AD29E2D9DA00279B39 /* AlertManager.swift in Sources */,
+				CCA889B329E2E37800279B39 /* CustomButton.swift in Sources */,
 				CC43B6C329D19E9600029D7A /* BreakViewController.swift in Sources */,
 				CCAF807829CDA60100BEEC92 /* TimerViewController.swift in Sources */,
 				CCAF808C29CDA72100BEEC92 /* SwitchTableViewCell.swift in Sources */,
 				CCAF807429CDA60100BEEC92 /* AppDelegate.swift in Sources */,
+				CCD78FC229E01A2200247CDC /* AuthViewController.swift in Sources */,
+				CC1A70AF29E40D0200DBCEF3 /* LoginController.swift in Sources */,
 				CCAD832229D5D2F900D43F9C /* HowItWorkViewController.swift in Sources */,
+				CCA889A729E2B75000279B39 /* AuthService.swift in Sources */,
+				CCA889B129E2E36400279B39 /* CustomTextField.swift in Sources */,
+				CC511CF529E8651F007A4908 /* NavigationManager.swift in Sources */,
 				CCAF807629CDA60100BEEC92 /* SceneDelegate.swift in Sources */,
 				CCAF808A29CDA6CC00BEEC92 /* SettingsTableViewCell.swift in Sources */,
 				CC02EAE529D1E5080047EDFC /* LongBreakViewController.swift in Sources */,
+				CCA889B529E2E38F00279B39 /* AuthHeaderView.swift in Sources */,
+				CC1A70AB29E3FBE300DBCEF3 /* Validator.swift in Sources */,
 				CCAF808E29CDA76700BEEC92 /* FocusTimeViewController.swift in Sources */,
+				CCA889AB29E2C28E00279B39 /* LoginUserRequest.swift in Sources */,
 				CCAF808829CDA69A00BEEC92 /* SettingsViewController.swift in Sources */,
 				CC110B9529D47CFD0082306D /* InformationViewController.swift in Sources */,
+				CCA889A929E2B81F00279B39 /* RegisterUserRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +567,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC7E367729E0581F001E17E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC7E367829E0581F001E17E9 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7E367729E0581F001E17E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CC7E367A29E0581F001E17E9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7E367729E0581F001E17E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CC7E367C29E0581F001E17E9 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7E367729E0581F001E17E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		CC7E367E29E0581F001E17E9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7E367729E0581F001E17E9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CCAF806829CDA60100BEEC92 /* Project object */;
 }

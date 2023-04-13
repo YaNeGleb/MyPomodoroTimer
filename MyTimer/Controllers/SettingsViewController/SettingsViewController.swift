@@ -6,11 +6,7 @@
 //
 
 import UIKit
-
-
-protocol MyDelegate {
-    func didGetValue(value: String)
-}
+import Firebase
 
 struct Section {
     let title: String
@@ -48,10 +44,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }()
     
     var models = [Section]()
+    
+    let darkThemeKey = "isDarkTheme"
     let switch1Key = "Switch1"
     let switch2Key = "Switch2"
     let userdefaults = UserDefaults.standard
-    let savedTheme = UserDefaults.standard.bool(forKey: "isDarkTheme")
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -63,10 +60,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.frame = view.bounds
         view.addSubview(tableView)
         
-        
-        if savedTheme {
-            overrideUserInterfaceStyle = .dark
-               }
     }
     
     //MARK: - Configure switch
@@ -74,17 +67,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         switch indexPath.row {
         case 0:
               if isOn {
-//                overrideUserInterfaceStyle = .dark
-                userdefaults.set(true, forKey: "isDarkTheme")
+                userdefaults.set(true, forKey: darkThemeKey)
                 userdefaults.set(isOn, forKey: switch1Key)
                   updateTheme()
-
               } else {
                   userdefaults.removeObject(forKey: switch1Key)
-//                  overrideUserInterfaceStyle = .light
-                  userdefaults.set(false, forKey: "isDarkTheme")
+                  userdefaults.set(false, forKey: darkThemeKey)
                   updateTheme()
-
               }
           case 1:
               if isOn {
@@ -99,7 +88,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK: - Update theme
     func updateTheme() {
-        let isDarkModeEnabled = userdefaults.bool(forKey: "isDarkTheme")
+        let isDarkModeEnabled = userdefaults.bool(forKey: darkThemeKey)
         if isDarkModeEnabled {
             if #available(iOS 13.0, *) {
                 UIApplication.shared.windows.forEach { window in
@@ -130,7 +119,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             ]),
             Section(title: "Общее", options: [
                 .switchCell(model: SettingsSwitchOption(title: "Темный режим", icon: UIImage(systemName: "moonphase.first.quarter.inverse"), iconBackgroundColor: .black, handler: {}, isOn: false)),
-                .switchCell(model: SettingsSwitchOption(title: "Dumayu2", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink, handler: {}, isOn: false))
+                .switchCell(model: SettingsSwitchOption(title: "Notification", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink, handler: {}, isOn: false)),
+                .staticCell(model: SettingsOption(title: "Выход из аккаунта", icon: UIImage(systemName: "arrowshape.turn.up.left.2.fill"), iconBackgroundColor: .systemRed) {})
             ])
         ]
     }
@@ -234,6 +224,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             case IndexPath(row: 1, section: 0):
                 let howItWorkViewController = storyboard?.instantiateViewController(withIdentifier: "HowItWorkViewController") as! HowItWorkViewController
                 navigationController?.pushViewController(howItWorkViewController, animated: true)
+                
+            case IndexPath(row: 2, section: 2):
+                AlertManager.showLogOutAlert(on: self)
                 
             default:
                 break

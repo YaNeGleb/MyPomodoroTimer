@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,7 +14,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -48,11 +48,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func userDefaultsDidChange(_ notification: Notification) {
-            // Обновляем тему, если значение свитча изменилось
-            let savedTheme = UserDefaults.standard.bool(forKey: "isDarkTheme")
-            window?.overrideUserInterfaceStyle = savedTheme ? .dark : .light
-        }
-
-
+        // Обновляем тему, если значение свитча изменилось
+        let savedTheme = UserDefaults.standard.bool(forKey: "isDarkTheme")
+        window?.overrideUserInterfaceStyle = savedTheme ? .dark : .light
+    }
 }
 

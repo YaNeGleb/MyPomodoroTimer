@@ -7,6 +7,8 @@
 
 import UIKit
 import UserNotifications
+import Firebase
+import FirebaseAuth
 
 enum TimerMode {
    case work, breakTime, longBreak
@@ -24,7 +26,7 @@ class TimerViewController: UIViewController {
     
     // MARK: - Properties
     private var timer = Timer()
-    private let defaults = UserDefaults.standard
+    private let userdefaults = UserDefaults.standard
     
     private let foreProgressLayer = CAShapeLayer()
     private let backProgressLayer = CAShapeLayer()
@@ -54,27 +56,40 @@ class TimerViewController: UIViewController {
         UNUserNotificationCenter.current().delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
         NotificationCenter.default.addObserver(self,selector:#selector(applicationWillEnterForeground),name:UIApplication.willEnterForegroundNotification,object:nil)
-
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if Auth.auth().currentUser != nil {
+            
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let registrationViewController = storyboard.instantiateViewController(withIdentifier: "AuthViewController") as! AuthViewController
+            registrationViewController.modalPresentationStyle = .fullScreen
+            self.present(registrationViewController, animated: true, completion: nil)
+            
+        }
     }
     
     // MARK: - UserDefaults
     func dataUserDefaults() {
-        guard let value = defaults.string(forKey: "selectedValue") else { return }
+        guard let value = userdefaults.string(forKey: "selectedValue") else { return }
         setStaticTimeForTimer(value: value)
         
-        guard let breakValue = defaults.string(forKey: "breakSelectedValue") else { return }
+        guard let breakValue = userdefaults.string(forKey: "breakSelectedValue") else { return }
         setBreakTime(value: breakValue)
         
-        guard let longBreakValue = defaults.string(forKey: "longBreakSelectedValue") else { return }
+        guard let longBreakValue = userdefaults.string(forKey: "longBreakSelectedValue") else { return }
         setLongBreakTime(value: longBreakValue)
     }
     
     @objc func applicationDidEnterBackground() {
         // Остановить анимацию и таймер, когда приложение уходит в фоновый режим
         pauseAnimation()
-
+        
     }
-
+    
     @objc func applicationWillEnterForeground() {
         // Запустить анимацию, когда приложение возвращается из фонового режима
         if isTimerStarted == true {
@@ -180,8 +195,9 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func perehodAction(_ sender: Any) {
-        let settingsViewController = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
-        navigationController?.pushViewController(settingsViewController, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let settingsController = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        navigationController?.pushViewController(settingsController, animated: true)
     }
     
     @IBAction func restartTimerAction(_ sender: Any) {
@@ -194,6 +210,12 @@ class TimerViewController: UIViewController {
         updateLabel(value: staticTimeForTimer)
     }
     
+    @IBAction func logOutButton(_ sender: Any) {
+        
+    }
+    
+    
+    
     //MARK: - Notification
     func scheduleTest(title: String, body: String) {
         let center = UNUserNotificationCenter.current()
@@ -203,7 +225,7 @@ class TimerViewController: UIViewController {
         content.sound = .default
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-        let request = UNNotificationRequest(identifier: "timerModeChange", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "myNotification", content: content, trigger: trigger)
         center.add(request) { error in
             if let error = error {
                 print("Error adding notification request: \(error.localizedDescription)")
@@ -295,6 +317,8 @@ extension Int {
         return CGFloat(self) * .pi / 180
     }
 }
+
+
     
     
     
