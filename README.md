@@ -1,6 +1,8 @@
 PomodoroTimer
 <details><summary>Video</summary>
-  
+
+https://user-images.githubusercontent.com/129688148/231849897-48b1b89c-7109-4813-8156-6bf7b13a8c0a.mov
+
 https://user-images.githubusercontent.com/129688148/230412485-3dd913af-a80e-41f0-852a-04c4b7dec59f.mov
 
 https://user-images.githubusercontent.com/129688148/230414109-14f13c05-13ad-438c-83ad-18202cac4d25.mov
