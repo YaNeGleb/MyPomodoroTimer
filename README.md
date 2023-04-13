@@ -9,11 +9,15 @@ https://user-images.githubusercontent.com/129688148/230414109-14f13c05-13ad-438c
 </details>
 
 <details><summary>Screenshots</summary>
-  
+
+![Снимок экрана 2023-04-13 в 21 28 56](https://user-images.githubusercontent.com/129688148/231850993-8c4b4d95-d8f0-4344-9b99-4ada4f8a8069.png)
+
+![Снимок экрана 2023-04-13 в 21 29 08](https://user-images.githubusercontent.com/129688148/231851038-46f25b71-25a2-42b0-a334-f0cf5a14d987.png)
+
 ![Снимок экрана 2023-04-06 в 17 24 04](https://user-images.githubusercontent.com/129688148/230408012-b005c590-e619-4eac-b4a8-e555b58387bc.png)
   
-![Снимок экрана 2023-04-06 в 17 24 24](https://user-images.githubusercontent.com/129688148/230408135-bdbad9de-c30e-4b50-a9c7-8048b9ce510e.png)
-  
+![Снимок экрана 2023-04-13 в 21 29 41](https://user-images.githubusercontent.com/129688148/231851137-b7341373-4bc4-40fe-b7eb-a988d80d06d2.png)
+
 ![Снимок экрана 2023-04-06 в 17 24 49](https://user-images.githubusercontent.com/129688148/230408512-75aa4cc8-16ae-4ffd-b416-f4ccd1c77f88.png)
   
 ![Снимок экрана 2023-04-06 в 17 25 08](https://user-images.githubusercontent.com/129688148/230408568-056294fb-d27d-4044-94c2-0b2d294105b1.png)
