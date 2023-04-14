@@ -47,7 +47,7 @@ class HowItWorkViewController: UIViewController {
     // MARK: - Create DescriptionLabel
 
     func createDescriptionLabel() {
-        descriptionLabel.frame = CGRect(x: 20, y: 140, width: view.bounds.width - 40, height: 0)
+        descriptionLabel.frame = CGRect(x: 20, y: 140, width: view.bounds.width, height: 0)
         attributedText(for: descriptionLabel)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textAlignment = .center

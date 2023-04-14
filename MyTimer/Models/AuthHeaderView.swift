@@ -2,9 +2,10 @@
 //  AuthHeaderView.swift
 //  MyTimer
 //
-//  Created by Gleb Zabroda on 09.04.2023.
+//  Created by Gleb Zabroda on 14.04.2023.
 //
 
+import Foundation
 import UIKit
 
 class AuthHeaderView: UIView {
@@ -12,8 +13,10 @@ class AuthHeaderView: UIView {
     // MARK: - UI Components
     private let logoImageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "logo")
+        iv.contentMode = .scaleToFill
+        iv.layer.cornerRadius = 50
+        iv.layer.masksToBounds = true
         return iv
     }()
     

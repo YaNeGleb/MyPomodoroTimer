@@ -26,7 +26,7 @@ class LoginController: UIViewController {
         self.setupUI()
         self.signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
         self.newUserButton.addTarget(self, action: #selector(didTapNewUser), for: .touchUpInside)
-//        self.forgotPasswordButton.addTarget(self, action: #selector(didTapForgotPassword), for: .touchUpInside)
+        self.forgotPasswordButton.addTarget(self, action: #selector(didTapForgotPassword), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,9 +116,8 @@ class LoginController: UIViewController {
         NavigationManager.navigateToRegister()
     }
     
-//    @objc private func didTapForgotPassword() {
-//        let vc = ForgotPasswordController()
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
+    @objc private func didTapForgotPassword() {
+        NavigationManager.navigateToForgotPasswordVC()
+    }
     }
 

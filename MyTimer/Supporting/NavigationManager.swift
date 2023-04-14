@@ -49,4 +49,13 @@ class NavigationManager {
 
         windowScene(controller: authViewController, navigation: nil)
     }
+    
+    //MARK: - NavigateToForgotPasswordVC
+
+    public static func navigateToForgotPasswordVC() {
+        let forgotPasswordVC = storyboard.instantiateViewController(withIdentifier: "ForgotPasswordViewController") as! ForgotPasswordViewController
+
+        windowScene(controller: forgotPasswordVC, navigation: nil)
+    }
+    
 }

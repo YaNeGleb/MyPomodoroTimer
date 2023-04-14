@@ -51,7 +51,7 @@ class TimerViewController: UIViewController {
         updateLabel(value: staticTimeForTimer)
         setBreakTime(value: staticTimeBreakForTimer)
         dataUserDefaults()
-        stayFocusedLabel.text = "Stay focused"
+        stayFocusedLabel.text = "Сфокусируйтесь"
         stayFocusedLabel.textColor = .systemRed
         UNUserNotificationCenter.current().delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -141,19 +141,19 @@ class TimerViewController: UIViewController {
                 if pomodoroCount % 4 == 0 {
                     scheduleTest(title: "Timer", body: "Пора отдохнуть!")
                     updateLabel(value: staticTimeLongBreak)
-                    stayFocusedLabel.text = "Take a long break"
+                    stayFocusedLabel.text = "Отдохните"
                     stayFocusedLabel.textColor = .green
                     timerMode = .longBreak
                 } else {
                     scheduleTest(title: "Timer", body: "Пора отдохнуть!")
-                    stayFocusedLabel.text = "Take a break"
+                    stayFocusedLabel.text = "Отдохните"
                     stayFocusedLabel.textColor = .green
                     updateLabel(value: staticTimeBreakForTimer)
                     timerMode = .breakTime
                 }
                 
             case .breakTime:
-                stayFocusedLabel.text = "Stay focused"
+                stayFocusedLabel.text = "Сфокусируйтесь"
                 scheduleTest(title: "Timer", body: "Пора поработать!")
                 stayFocusedLabel.textColor = .red
                 updateLabel(value: staticTimeForTimer)
@@ -162,7 +162,7 @@ class TimerViewController: UIViewController {
             case .longBreak:
                 stayFocusedLabel.textColor = .red
                 scheduleTest(title: "Timer", body: "Время поработать!")
-                stayFocusedLabel.text = "Stay focused"
+                stayFocusedLabel.text = "Сфокусируйтесь"
                 updateLabel(value: staticTimeForTimer)
                 timerMode = .work
                 pomodoroCount = 0
@@ -208,13 +208,8 @@ class TimerViewController: UIViewController {
         isTimerStarted = false
         timerLabel.text = staticTimeForTimer
         updateLabel(value: staticTimeForTimer)
+        timerMode = .breakTime
     }
-    
-    @IBAction func logOutButton(_ sender: Any) {
-        
-    }
-    
-    
     
     //MARK: - Notification
     func scheduleTest(title: String, body: String) {

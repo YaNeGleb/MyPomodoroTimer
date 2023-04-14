@@ -12,6 +12,8 @@
 		CC1A70AB29E3FBE300DBCEF3 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A70AA29E3FBE300DBCEF3 /* Validator.swift */; };
 		CC1A70AF29E40D0200DBCEF3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1A70AE29E40D0200DBCEF3 /* LoginController.swift */; };
 		CC43B6C329D19E9600029D7A /* BreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC43B6C229D19E9600029D7A /* BreakViewController.swift */; };
+		CC44B2E729E94D8C0039988B /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC44B2E629E94D8C0039988B /* AuthHeaderView.swift */; };
+		CC44B2E929E952290039988B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC44B2E829E952280039988B /* ForgotPasswordViewController.swift */; };
 		CC511CF529E8651F007A4908 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC511CF429E8651F007A4908 /* NavigationManager.swift */; };
 		CC7E367929E0581F001E17E9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7E367829E0581F001E17E9 /* FirebaseAnalytics */; };
 		CC7E367B29E0581F001E17E9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CC7E367A29E0581F001E17E9 /* FirebaseAuth */; };
@@ -23,7 +25,6 @@
 		CCA889AD29E2D9DA00279B39 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA889AC29E2D9DA00279B39 /* AlertManager.swift */; };
 		CCA889B129E2E36400279B39 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA889B029E2E36300279B39 /* CustomTextField.swift */; };
 		CCA889B329E2E37800279B39 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA889B229E2E37800279B39 /* CustomButton.swift */; };
-		CCA889B529E2E38F00279B39 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA889B429E2E38F00279B39 /* AuthHeaderView.swift */; };
 		CCAD832229D5D2F900D43F9C /* HowItWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD832129D5D2F900D43F9C /* HowItWorkViewController.swift */; };
 		CCAF807429CDA60100BEEC92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF807329CDA60100BEEC92 /* AppDelegate.swift */; };
 		CCAF807629CDA60100BEEC92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF807529CDA60100BEEC92 /* SceneDelegate.swift */; };
@@ -45,6 +46,8 @@
 		CC1A70AA29E3FBE300DBCEF3 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		CC1A70AE29E40D0200DBCEF3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		CC43B6C229D19E9600029D7A /* BreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakViewController.swift; sourceTree = "<group>"; };
+		CC44B2E629E94D8C0039988B /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
+		CC44B2E829E952280039988B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		CC511CF429E8651F007A4908 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		CCA889A629E2B75000279B39 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CCA889A829E2B81F00279B39 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
@@ -52,7 +55,6 @@
 		CCA889AC29E2D9DA00279B39 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		CCA889B029E2E36300279B39 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CCA889B229E2E37800279B39 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		CCA889B429E2E38F00279B39 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		CCAD832129D5D2F900D43F9C /* HowItWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorkViewController.swift; sourceTree = "<group>"; };
 		CCAF807029CDA60100BEEC92 /* MyTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCAF807329CDA60100BEEC92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,14 +95,22 @@
 			path = InformationViewController;
 			sourceTree = "<group>";
 		};
+		CC44B2EA29E9522E0039988B /* ForgotPasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC44B2E829E952280039988B /* ForgotPasswordViewController.swift */,
+			);
+			path = ForgotPasswordViewController;
+			sourceTree = "<group>";
+		};
 		CC511CED29E858BB007A4908 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				CCA889A829E2B81F00279B39 /* RegisterUserRequest.swift */,
 				CCA889AA29E2C28D00279B39 /* LoginUserRequest.swift */,
-				CCA889B429E2E38F00279B39 /* AuthHeaderView.swift */,
 				CCA889B229E2E37800279B39 /* CustomButton.swift */,
 				CCA889B029E2E36300279B39 /* CustomTextField.swift */,
+				CC44B2E629E94D8C0039988B /* AuthHeaderView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,6 +134,7 @@
 		CC511CF129E85A74007A4908 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CC44B2EA29E9522E0039988B /* ForgotPasswordViewController */,
 				CC511CEF29E8591D007A4908 /* LogInViewController */,
 				CC511CEE29E85906007A4908 /* AuthViewController */,
 				CCCAE33029D2F2EC00553268 /* TimerViewController */,
@@ -329,8 +340,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA889AD29E2D9DA00279B39 /* AlertManager.swift in Sources */,
+				CC44B2E929E952290039988B /* ForgotPasswordViewController.swift in Sources */,
 				CCA889B329E2E37800279B39 /* CustomButton.swift in Sources */,
 				CC43B6C329D19E9600029D7A /* BreakViewController.swift in Sources */,
+				CC44B2E729E94D8C0039988B /* AuthHeaderView.swift in Sources */,
 				CCAF807829CDA60100BEEC92 /* TimerViewController.swift in Sources */,
 				CCAF808C29CDA72100BEEC92 /* SwitchTableViewCell.swift in Sources */,
 				CCAF807429CDA60100BEEC92 /* AppDelegate.swift in Sources */,
@@ -343,7 +356,6 @@
 				CCAF807629CDA60100BEEC92 /* SceneDelegate.swift in Sources */,
 				CCAF808A29CDA6CC00BEEC92 /* SettingsTableViewCell.swift in Sources */,
 				CC02EAE529D1E5080047EDFC /* LongBreakViewController.swift in Sources */,
-				CCA889B529E2E38F00279B39 /* AuthHeaderView.swift in Sources */,
 				CC1A70AB29E3FBE300DBCEF3 /* Validator.swift in Sources */,
 				CCAF808E29CDA76700BEEC92 /* FocusTimeViewController.swift in Sources */,
 				CCA889AB29E2C28E00279B39 /* LoginUserRequest.swift in Sources */,

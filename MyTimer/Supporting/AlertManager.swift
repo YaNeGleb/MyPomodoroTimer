@@ -62,15 +62,6 @@ extension AlertManager {
 }
 
 
-// MARK: - Logout Errors
-extension AlertManager {
-    
-    public static func showLogoutError(on vc: UIViewController, with error: Error) {
-        self.showBasicAlert(on: vc, title: "Log Out Error", message: "\(error.localizedDescription)")
-    }
-}
-
-
 // MARK: - Forgot Password
 extension AlertManager {
 
@@ -100,8 +91,8 @@ extension AlertManager {
 extension AlertManager {
     
     public static func showLogOutAlert(on vc: UIViewController) {
-        let alert = UIAlertController(title: "Exit", message: "Are you sure you want to log out of your account?", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+        let alert = UIAlertController(title: "Выход", message: "Вы уверены,что хотите выйти из аккаунта?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ок", style: .default) { (_) in
             do {
                 try Auth.auth().signOut()
                 NavigationManager.navigateToLogin()
@@ -110,12 +101,25 @@ extension AlertManager {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Пропустить", style: .cancel, handler: nil)
         
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         
         vc.present(alert, animated: true, completion: nil)
     }
+}
+
+    
+extension AlertManager {
+
+    public static func showResetPasswordAlert(on vc: UIViewController) {
+        let alert = UIAlertController(title: "Восстановление пароля", message: "Сообщение про восстановление пароля было отправлено Вам на почту", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+            NavigationManager.navigateToLogin()
+        }
+        alert.addAction(okAction)
+        
+        vc.present(alert, animated: true, completion: nil)    }
 }
 
